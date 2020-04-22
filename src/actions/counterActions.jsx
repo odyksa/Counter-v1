@@ -1,36 +1,45 @@
 /* 
   types of actions
 */
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const RANDOM = 'RANDOM';
+export const INCREASE_BY_ONE = 'INCREASE_BY_ONE';
+export const DECREASE_BY_ONE = 'DECREASE_BY_ONE';
+export const INCREASE_BY_RANDOM = 'INCREASE_BY_RANDOM';
+export const DECREASE_BY_RANDOM = 'DECREASE_BY_RANDOM'
 
 /*
   action creators
 */
 
-// increase by one
-export const increment = () => {
+export const increaseByOne = () => {
   return {
-    type: INCREMENT,
+    type: INCREASE_BY_ONE,
     payload: 1
   }
 }
 
-// decrease by one
-export const decrement = () => {
+export const decreaseByOne = () => {
   return {
-    type: DECREMENT,
+    type: DECREASE_BY_ONE,
     payload: 1
   }
 }
 
-// set random value
-export const random = () => {
+// add random value
+export const increaseByRnd = () => {
   const randomVal = Math.floor(Math.random() * 10);
 
   return {
-    type: RANDOM,
+    type: INCREASE_BY_RANDOM,
+    payload: randomVal
+  }
+}
+
+// minus random value
+export const decreaseByRnd = () => {
+  const randomVal = Math.floor(Math.random() * 10);
+
+  return {
+    type: DECREASE_BY_RANDOM,
     payload: randomVal
   }
 }

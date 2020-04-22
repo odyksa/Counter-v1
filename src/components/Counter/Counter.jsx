@@ -4,20 +4,23 @@ import { connect } from 'react-redux';
 
 import styles from './Counter.scss';
 
-import { increment, decrement, random } from '../../actions/counterActions';
+import { increaseByOne, decreaseByOne, increaseByRnd, decreaseByRnd } from '../../actions/counterActions';
+import History from '../History';
 
 class Counter extends Component {
   render() {
-    const { value, increase, decrease, random } = this.props;
+    const { value, increaseByOne, decreaseByOne, increaseByRnd, decreaseByRnd } = this.props;
 
     return (
       <div className={styles.counter}>
         <div className={styles.value}>{value}</div>
         <div className="btns">
-          <button onClick={increase}>+1</button>
-          <button onClick={decrease}>-1</button>
-          <button onClick={random}>+ random</button>
+          <button onClick={increaseByOne} title="Increase by 1">+ 1</button>
+          <button onClick={decreaseByOne} title="Decrease by 1">- 1</button>
+          <button onClick={increaseByRnd} title="Increase by Random value">+ RND</button>
+          <button onClick={decreaseByRnd} title="Decrease by Random value">- RND</button>
         </div>
+        <History />
       </div>
     );
   }
@@ -31,9 +34,10 @@ const mapStateToProps = ({ counter }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increase: bindActionCreators(increment, dispatch),
-    decrease: bindActionCreators(decrement, dispatch),
-    random: bindActionCreators(random, dispatch),
+    increaseByOne: bindActionCreators(increaseByOne, dispatch),
+    decreaseByOne: bindActionCreators(decreaseByOne, dispatch),
+    increaseByRnd: bindActionCreators(increaseByRnd, dispatch),
+    decreaseByRnd: bindActionCreators(decreaseByRnd, dispatch)
   }
 }
 
