@@ -1,10 +1,9 @@
-import { INCREMENT, DECREMENT, RANDOM } from '../actions/appActions';
-
+import { INCREMENT, DECREMENT, RANDOM } from '../actions/counterActions';
 
 // set initial state for Counter
 const initialState = 0;
 
-export const appReducer = (state = initialState, action) => {
+export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return state + action.payload;
