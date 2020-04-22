@@ -25,9 +25,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ app }) => {
+  // console.log(state);
   return {
-    value: state
+    value: app
   }
 }
 
