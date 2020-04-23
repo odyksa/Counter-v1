@@ -13,9 +13,9 @@ class History extends Component {
   }
 }
 
-const mapStateToProps = ({ history }) => {
+const mapStateToProps = (state) => {
   return {
-    value: history
+    value: state.history.lastThreeResults
   }
 }
 

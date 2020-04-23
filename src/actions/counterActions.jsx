@@ -10,14 +10,14 @@ export const DECREASE_BY_RANDOM = 'DECREASE_BY_RANDOM'
   action creators
 */
 
-export const increaseByOne = () => {
+export function increaseByOne() {
   return {
     type: INCREASE_BY_ONE,
     payload: 1
   }
 }
 
-export const decreaseByOne = () => {
+export function decreaseByOne() {
   return {
     type: DECREASE_BY_ONE,
     payload: 1
@@ -25,7 +25,7 @@ export const decreaseByOne = () => {
 }
 
 // add random value
-export const increaseByRnd = () => {
+export function increaseByRnd() {
   const randomVal = Math.floor(Math.random() * 10);
 
   return {
@@ -35,7 +35,7 @@ export const increaseByRnd = () => {
 }
 
 // minus random value
-export const decreaseByRnd = () => {
+export function decreaseByRnd() {
   const randomVal = Math.floor(Math.random() * 10);
 
   return {
