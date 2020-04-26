@@ -1,18 +1,31 @@
-import { ADD_VAL_TO_HISTORY } from '../actions/randomUsersActions';
+import { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE } from '../actions/randomUsersActions';
 
+// init state
 const initialState = {
   loading: false,
   users: [],
-  error: false
+  error: ''
 };
 
-export const historyReducer = (prevState = initialState, action) => {
-  console.log(action.payload);
+export const randomUsersReducer = (prevState = initialState, action) => {
   switch (action.type) {
-    case ADD_VAL_TO_HISTORY:
+    case FETCH_USERS_REQUEST:
+      return {
+        users: [],
+        loading: true,
+        error: ''
+      };
+    case FETCH_USERS_SUCCESS:
       return {
         ...prevState,
-        lastThreeResults: action.payload
+        loading: false,
+        users: action.payload
+      };
+    case FETCH_USERS_FAILURE:
+      return {
+        loading: false,
+        users: [],
+        error: action.payload
       };
     default:
       return prevState;

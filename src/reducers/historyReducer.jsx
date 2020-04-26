@@ -6,7 +6,6 @@ const initialState = {
 };
 
 export const historyReducer = (prevState = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case ADD_VAL_TO_HISTORY:
       return {

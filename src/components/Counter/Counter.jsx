@@ -4,12 +4,19 @@ import { connect } from 'react-redux';
 
 import styles from './Counter.scss';
 
+import { store } from '../../store';
 import { increaseByOne, decreaseByOne, increaseByRnd, decreaseByRnd } from '../../actions/counterActions';
 import { addValToHistory } from '../../actions/historyActions';
-
+import { fetchUsers } from '../../actions/randomUsersActions';
 import History from '../History';
+import RandomUsers from '../RandomUsers';
 
 class Counter extends Component {
+
+  componentDidMount = () => {
+    store.dispatch(fetchUsers());
+  }
+
   render() {
     const { value, increaseByOne, decreaseByOne, increaseByRnd, decreaseByRnd, addValToHistory } = this.props;
 
@@ -23,6 +30,7 @@ class Counter extends Component {
           <button onClick={decreaseByRnd} title="Decrease by Random value">- RND</button>
         </div>
         <History />
+        <RandomUsers />
       </div>
     );
   }
