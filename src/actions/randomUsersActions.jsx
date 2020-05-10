@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { RandomUsersService } from '../services/randomUsersService';
+
 /*
   types of actions
 */
