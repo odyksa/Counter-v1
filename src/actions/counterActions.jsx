@@ -4,11 +4,19 @@
 export const INCREASE_BY_ONE = 'INCREASE_BY_ONE';
 export const DECREASE_BY_ONE = 'DECREASE_BY_ONE';
 export const INCREASE_BY_RANDOM = 'INCREASE_BY_RANDOM';
-export const DECREASE_BY_RANDOM = 'DECREASE_BY_RANDOM'
+export const DECREASE_BY_RANDOM = 'DECREASE_BY_RANDOM';
+export const INIT = 'INIT';
 
 /*
   action creators
 */
+
+export function init() {
+  return {
+    type: INIT,
+    payload: 0
+  }
+}
 
 export function increaseByOne() {
   return {

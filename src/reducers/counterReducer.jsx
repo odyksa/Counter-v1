@@ -1,12 +1,17 @@
-import { INCREASE_BY_ONE, DECREASE_BY_ONE, INCREASE_BY_RANDOM, DECREASE_BY_RANDOM } from '../actions/counterActions';
+import { INIT, INCREASE_BY_ONE, DECREASE_BY_ONE, INCREASE_BY_RANDOM, DECREASE_BY_RANDOM } from '../actions/counterActions';
 
 // set initial state for Counter
 const initialState = {
-  result: 0
+  result: ''
 };
 
 export const counterReducer = (prevState = initialState, action) => {
   switch (action.type) {
+    case INIT:
+      return {
+        ...prevState,
+        result: action.payload
+      };
     case INCREASE_BY_ONE:
       return {
         ...prevState,
