@@ -26,8 +26,8 @@ class Counter extends Component {
         <div className="btns">
           <button onClick={() => { increaseByOne(), addValToHistory(value) }} title="Increase by 1">+ 1</button>
           <button onClick={decreaseByOne} title="Decrease by 1">- 1</button>
-          <button onClick={increaseByRnd} title="Increase by Random value">+ RND</button>
-          <button onClick={decreaseByRnd} title="Decrease by Random value">- RND</button>
+          <button onClick={increaseByRnd} title="Increase by Random value">+ Random Value</button>
+          <button onClick={decreaseByRnd} title="Decrease by Random value">- Random Value</button>
         </div>
         <History />
         <RandomUsers />
